@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>webapp</title><!--comment-->
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
 <header>
-  <div class="layout-wrap">
+  <div class="layout-wrap clearfix"><!--header-->
     <a href="#"><img src="https://googledrive.com/host/0B6ZIsommzsgVMVA2MzdKUjN2S0U/logo-netcraft.svg" alt="netcraft"></a>
     <form class="search-box" method="get" action="http://www.google.com">
       <input type="search" name="q" placeholder="search">
@@ -16,8 +17,8 @@
 <div class="page-body layout-wrap">
   <div class="notifications">
   </div>
-  <nav>
-    <div class="nav-section">
+  <nav class="clearfix"><!--3 black boxes-->
+    <div class="nav-section"><!--1st black box-->
       <p>Select Reporting Platform</p>
       <div class="menu">
         <div class="menu-hint">
@@ -33,7 +34,7 @@
         </ul>
       </div>
     </div>
-    <div class="nav-section">
+    <div class="nav-section"><!--2nd black box-->
       <p>Select Dashboard</p>
       <div class="menu">
         <div class="menu-hint">
@@ -49,7 +50,7 @@
         </ul>
       </div>
     </div>
-    <div class="nav-section">
+    <div class="nav-section"><!--3rd black box-->
       <p>Help &amp; Tutorials</p>
       <div class="menu">
         <div class="menu-hint">
@@ -66,8 +67,8 @@
       </div>
     </div>
   </nav>
-  <div class="tabs">
-    <ul>
+  <div class="tabs clearfix"><!--tabs section-->
+    <ul><!--tabs navigator-->
       <li><a href="#quick-reports">Quick Reports</a>
       </li>
       <li><a href="#fmy-folders">My Folders</a>
@@ -77,7 +78,7 @@
       <li><a href="#public-folders">Public Folders</a>
       </li>
     </ul>
-    <div id="quick-reports">
+    <div id="quick-reports"><!--tabs-->
     </div>
     <div id="fmy-folders">
     </div>

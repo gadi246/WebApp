@@ -1,1 +1,75 @@
 /*general*/
+html {
+       box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+li {
+    list-style: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+/*============
+clearfix
+==============*/
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    clear: both;
+    *zoom: 1;
+}
+body {
+    background: lemonchiffon;
+}
+/*=========
+  header
+===========*/
+.layout-wrap {
+    width: 70%;
+    margin: 0 auto;
+}
+header .layout-wrap a {
+    float: left;
+}
+ header .layout-wrap form {
+    float: right;
+}
+ /*=============
+ main section
+ ===============*/
+.page-body {
+    background: rgba(0, 0, 0, 0.2);
+}
+/*==============
+ top navigator(3 menu boxes )
+ ===============*/
+.nav-section {
+    float: left;
+    width: 30%;
+    margin: 1.666% ;
+    text-align: center;
+}
+/*================
+   4 tabs boxes
+ ===============*/
+.tabs li {
+    float: left;
+    width: 20%;
+    margin: 2.5%;
+}
+.tabs div {
+    width: 100%;
+}
