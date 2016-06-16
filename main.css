@@ -37,9 +37,13 @@ body {
 /*=========
   header
 ===========*/
+header {
+    background: #222;
+}
 .layout-wrap {
     width: 70%;
     margin: 0 auto;
+
 }
 header .layout-wrap a {
     float: left;
@@ -56,8 +60,11 @@ header .layout-wrap a {
 /*==============
  top navigator(3 menu boxes )
  ===============*/
+.notifications + nav {
+    display: flex;
+}
 .nav-section {
-    float: left;
+
     width: 30%;
     margin: 1.666% ;
     text-align: center;
