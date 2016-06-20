@@ -15,53 +15,65 @@ a:link {
 }
 
 /*============
-clearfix
+clearfix !!!NOT APPLIED IN THIS PROJECT THANKS TO FLEX-BOX!!!
 ==============*/
-.clearfix:before,
-.clearfix:after {
-    content: "";
-    display: table;
-}
+/*.clearfix:before,*/
+/*.clearfix:after {*/
+    /*content: "";*/
+    /*display: table;*/
+/*}*/
 
-.clearfix:after {
-    clear: both;
-}
+/*.clearfix:after {*/
+    /*clear: both;*/
+/*}*/
 
-.clearfix {
-    clear: both;
-    *zoom: 1;
-}
+/*.clearfix {*/
+    /*clear: both;*/
+    /**zoom: 1;*/
+/*}*/
 body {
-    background: lemonchiffon;
+    background: url(images/body-background.jpg);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 /*=========
   header
 ===========*/
 header {
     background: #222;
+    height: 50px;
+    display: flex;
+    justify-content: center;
 }
 .layout-wrap {
     width: 70%;
-    margin: 0 auto;
-
+    /*margin: 0 auto;<=== done by flexbox given to body tag*/
 }
-header .layout-wrap a {
-    float: left;
+header > .layout-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
- header .layout-wrap form {
-    float: right;
-}
+/*header .layout-wrap a <===done by flexbox given to header > .layout-wrap{*/
+    /*float: left;*/
+/*}*/
+ /*header .layout-wrap form {*/
+    /*float: right;*/
+/*}*/
  /*=============
  main section
  ===============*/
 .page-body {
     background: rgba(0, 0, 0, 0.2);
+    align-self: center;
 }
 /*==============
  top navigator(3 menu boxes )
  ===============*/
 .notifications + nav {
     display: flex;
+
 }
 .nav-section {
 
@@ -72,8 +84,11 @@ header .layout-wrap a {
 /*================
    4 tabs boxes
  ===============*/
+.tabs ul {
+    display: flex;
+}
 .tabs li {
-    float: left;
+    /*float: left; <=== done by flexbox given to ul of these lis'*/
     width: 20%;
     margin: 2.5%;
 }
