@@ -53,7 +53,7 @@ header {
 header > .layout-wrap {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 }
 /*header .layout-wrap a <===done by flexbox given to header > .layout-wrap{*/
     /*float: left;*/
@@ -75,11 +75,55 @@ header > .layout-wrap {
     display: flex;
 
 }
+/*styling the 3 boxes*/
 .nav-section {
-
+    background: #222;
+    color: rgb(240,240,240);
     width: 30%;
     margin: 1.666% ;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+/*styling of the red icons*/
+.nav-section > p {
+    font-size: 1.3rem;
+}
+.nav-section::after {
+    content: '';
+    display: inline-block;
+    width:50%;
+    height: 70px;
+    order:2;
+    align-self: center;
+}
+.nav-section:first-child::after {
+    background:url(images/icons/action-report-new.png);
+    background-repeat:no-repeat;
+}
+.nav-section:nth-child(2)::after{
+    background: url(images/icons/action-report-top.png);
+    background-repeat:no-repeat;
+}
+.nav-section:last-child::after {
+    background: url(images/icons/actions-help.png);
+    background-repeat:no-repeat;
+}
+.menu {
+    background: #ebebeb;
+    order:3
+
+}
+.menu-hint p {
+    color: #222;
+    text-align: left;
+    padding: 5px 6px;
+    margin: 0;
+
+
+}
+.menu ul {
+    display: none;
 }
 /*================
    4 tabs boxes
