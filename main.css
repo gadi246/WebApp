@@ -151,6 +151,7 @@ header > .layout-wrap {
     display: flex;
     justify-content: center;
     padding: 0;
+    margin-bottom: 0;
 }
 .tabs li {
     /*float: left; <=== done by flexbox given to ul of these lis'*/
@@ -159,6 +160,7 @@ header > .layout-wrap {
     background: #646464;
     padding: 12px 5px;
     text-align: center;
+
 }
 .tabs li > a {
     color: rgb(240,240,240);
@@ -171,5 +173,11 @@ header > .layout-wrap {
 }
 
 .tabs div {
-    width: 100%;
+    height: 200px;
+    background: #ebebeb;
+    margin: 0 1.666%;
+    display: none;
+}
+.tabs :target {
+   display: block;
 }
