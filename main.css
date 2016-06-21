@@ -36,6 +36,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    font-family: "Open Sans";
 }
 /*=========
   header
@@ -119,29 +120,56 @@ header > .layout-wrap {
 }
 .menu {
     background: #ebebeb;
-    order:3
-
+    order:3;
+}
+.menu-hint {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 .menu-hint p {
     color: #222;
     text-align: left;
     padding: 5px 6px;
     margin: 0;
+    font-size: 0.9rem;
 }
 .menu ul {
     display: none;
+}
+.arrow {
+    color: #222222;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 8px;
 }
 /*================
    4 tabs boxes
  ===============*/
 .tabs ul {
     display: flex;
+    justify-content: center;
+    padding: 0;
 }
 .tabs li {
     /*float: left; <=== done by flexbox given to ul of these lis'*/
-    width: 20%;
-    margin: 2.5%;
+    width: 23%;
+    margin: 1.666%;
+    background: #646464;
+    padding: 12px 5px;
+    text-align: center;
 }
+.tabs li > a {
+    color: rgb(240,240,240);
+    font-size: 0.9rem;
+}
+.tabs li > a > i {
+    font-size: 1.2rem;
+    padding-right: 4px;
+    vertical-align: bottom;
+}
+
 .tabs div {
     width: 100%;
 }
