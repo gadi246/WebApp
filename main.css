@@ -157,14 +157,19 @@ header > .layout-wrap {
     /*float: left; <=== done by flexbox given to ul of these lis'*/
     width: 23%;
     margin: 1.666%;
+    margin-bottom: 0;
     background: #646464;
-    padding: 12px 5px;
     text-align: center;
 
 }
 .tabs li > a {
     color: rgb(240,240,240);
     font-size: 0.9rem;
+    display: block;
+    padding: 12px 5px;
+    height: 100%;
+
+
 }
 .tabs li > a > i {
     font-size: 1.2rem;
