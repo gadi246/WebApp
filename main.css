@@ -36,7 +36,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    font-family: "Open Sans";
+    font-family: "Open Sans",sans-serif;
 }
 /*=========
   header
@@ -180,13 +180,13 @@ header > .layout-wrap {
 /*================
    4 tabs boxes
  ===============*/
-.tabs ul {
+.tabs > ul {
     display: flex;
     justify-content: center;
     padding: 0;
     margin: 0;
 }
-.tabs li {
+.tabs > ul > li {
     /*float: left; <=== done by flexbox given to ul of these lis'*/
     width: 23%;
     margin: 1.666%;
@@ -195,7 +195,7 @@ header > .layout-wrap {
     text-align: center;
 
 }
-.tabs li > a {
+.tabs > ul > li > a {
     color: rgb(240,240,240);
     font-size: 0.9rem;
     display: block;
@@ -214,11 +214,12 @@ header > .layout-wrap {
     background: #ebebeb;
     margin: 0 1.666%;
     display: none;
-    padding-top: 1%;
+    padding: 1%;
 }
 
 .tabs :target {
     display: flex;
+
 
 }
 #quick-reports {
@@ -227,7 +228,7 @@ header > .layout-wrap {
 }
 .setting-box {
     display: flex;
-    width: 80%;
+    width: 100%;
     justify-content: space-between;
 }
 .setting-box span > .expand {
@@ -235,6 +236,41 @@ header > .layout-wrap {
 }
 .quick-frame {
     margin-top: 30px;
+}
+.custom-frame-box {
+    width: 100%;
+    background: #fff;
+    padding: 10px;
+    margin-top: 10px;
+}
+.custom-frame-box ul{
+    padding: 0;
+}
+.custom-frame-box li {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 5px 3px;
+    background: #c2c1c1;
+}
+.custom-frame-box label:first-child {
+  width: 60%;
+}
+.custom-frame-box label:first-child > input {
+    width: 70%;
+    margin-left: 10px;
+}
+.custom-frame-box label:last-child  {
+    width: 45%;
+}
+.custom-frame-box label:last-child > input {
+    width: 90%;
+    margin-left: 10px;
+}
+.quick-btn {
+    float: right;
+    background: rgb(20,20,20);
+    color: rgb(240,240,240);
 }
 
 
