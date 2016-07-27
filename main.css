@@ -49,6 +49,7 @@ header {
 }
 .layout-wrap {
     width: 80%;
+
     /*margin: 0 auto;<=== done by flexbox given to body tag*/
 }
 header > .layout-wrap {
@@ -209,15 +210,34 @@ header > .layout-wrap {
     vertical-align: bottom;
 }
 
-.tabs div {
-    height: 200px;
+.tabs > div {
     background: #ebebeb;
     margin: 0 1.666%;
     display: none;
+    padding-top: 1%;
 }
+
 .tabs :target {
-   display: block;
+    display: flex;
+
 }
+#quick-reports {
+    flex-direction: column;
+    align-items: center;
+}
+.setting-box {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+.setting-box span > .expand {
+    padding-right: 10px;
+}
+.quick-frame {
+    margin-top: 30px;
+}
+
+
 @media (max-width: 960px) {
     .layout-wrap {
         width:100%;
