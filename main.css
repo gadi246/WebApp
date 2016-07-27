@@ -48,7 +48,7 @@ header {
     justify-content: center;
 }
 .layout-wrap {
-    width: 70%;
+    width: 80%;
     /*margin: 0 auto;<=== done by flexbox given to body tag*/
 }
 header > .layout-wrap {
@@ -88,21 +88,31 @@ header > .layout-wrap {
     background: #222;
     color: rgb(240,240,240);
     width: 30%;
+    height: 170px;
     margin: 1.666% ;
     text-align: center;
     text-transform: capitalize;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
+.nav-section:hover a {
+    max-height:30px;
+}
+.nav-section:hover i {
+    transform: rotate(180deg);
+    transform-origin: 50% 50%;
+}
+
 /*styling of the red icons*/
 .nav-section > p {
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 .nav-section::after {
     content: '';
     display: inline-block;
-    width:50%;
-    height: 70px;
+    width:40%;
+    height: 80px;
     order:2;
     align-self: center;
 }
@@ -121,11 +131,13 @@ header > .layout-wrap {
 .menu {
     background: #ebebeb;
     order:3;
+    position: relative;
 }
 .menu-hint {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+
 }
 .menu-hint p {
     color: #222;
@@ -135,7 +147,24 @@ header > .layout-wrap {
     font-size: 0.9rem;
 }
 .menu ul {
-    display: none;
+  position: absolute;
+  width:100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  box-shadow: 1px 1px 5px 0px gray;
+}
+.menu ul  a {
+    display: block;
+    background: rgb(250,250,250) ;
+    max-height:0;
+    overflow: hidden;
+    transition: all .3s ease;
+}
+.menu ul  a:hover {
+    color: blue;
+    background:#c2c1c1;
+
 }
 .arrow {
     color: #222222;
@@ -144,6 +173,9 @@ header > .layout-wrap {
     height: 10px;
     margin-right: 8px;
 }
+.arrow i {
+    transition: all .3s linear;
+}
 /*================
    4 tabs boxes
  ===============*/
@@ -151,7 +183,7 @@ header > .layout-wrap {
     display: flex;
     justify-content: center;
     padding: 0;
-    margin-bottom: 0;
+    margin: 0;
 }
 .tabs li {
     /*float: left; <=== done by flexbox given to ul of these lis'*/
@@ -185,4 +217,9 @@ header > .layout-wrap {
 }
 .tabs :target {
    display: block;
+}
+@media (max-width: 960px) {
+    .layout-wrap {
+        width:100%;
+    }
 }
