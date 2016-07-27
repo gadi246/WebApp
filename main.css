@@ -149,6 +149,7 @@ header > .layout-wrap {
 }
 .menu ul {
   position: absolute;
+  z-index: 100;
   width:100%;
   text-align: center;
   margin: 0;
@@ -225,7 +226,8 @@ header > .layout-wrap {
 #quick-reports {
     flex-direction: column;
     align-items: center;
-}
+    position: relative;
+    }
 .setting-box {
     display: flex;
     width: 100%;
@@ -238,11 +240,23 @@ header > .layout-wrap {
     margin-top: 30px;
 }
 .custom-frame-box {
-    width: 100%;
+    font-size: 0.8rem;
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+    width: 97.9%;
     background: #fff;
-    padding: 10px;
-    margin-top: 10px;
+    box-shadow: 1px 1px 5px 0px gray;
+    transition: all .3s ease;
+    /*padding: 10px;*/
+    /*margin-top: 10px;*/
 }
+#set-box {
+    display: none;
+}
+.setting-icon {
+    cursor: pointer;
+    }
 .custom-frame-box ul{
     padding: 0;
 }
@@ -254,23 +268,51 @@ header > .layout-wrap {
     background: #c2c1c1;
 }
 .custom-frame-box label:first-child {
-  width: 60%;
+  width: 55%;
 }
 .custom-frame-box label:first-child > input {
     width: 70%;
     margin-left: 10px;
 }
 .custom-frame-box label:last-child  {
-    width: 45%;
+    width: 55%;
 }
 .custom-frame-box label:last-child > input {
     width: 90%;
     margin-left: 10px;
 }
+.report-lab {
+    margin-right: 40px;
+}
 .quick-btn {
     float: right;
     background: rgb(20,20,20);
     color: rgb(240,240,240);
+    border: none;
+    padding: 3px 30px
+}
+#set-box:checked ~ .custom-frame-box {
+    height: 230px;
+    overflow: visible;
+    padding: 10px;
+    margin-top: 10px;
+}
+.quick-dropdown {
+    width: 200px;
+    height: 25px;
+    background: #fff;
+    border: 1px solid #646464;
+    position: relative;
+}
+.quick-dropdown li > a {
+    color:#222222;
+    display: block;
+    position: absolute;
+    bottom: 0;
+}
+.quick-dropdown .arrow {
+    position: absolute;
+    right:5px;
 }
 
 

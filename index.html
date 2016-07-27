@@ -10,7 +10,8 @@
 <body>
 <header>
   <div class="layout-wrap clearfix"><!--header-->
-    <a href="#"><img src="https://googledrive.com/host/0B6ZIsommzsgVMVA2MzdKUjN2S0U/logo-netcraft.svg" alt="netcraft"></a>
+    <a href="#"><img src="https://googledrive.com/host/0B6ZIsommzsgVMVA2MzdKUjN2S0U/logo-netcraft.svg"
+                     alt="netcraft"></a>
     <form class="search-box" method="get" action="http://www.google.com">
       <input type="search" name="q" placeholder="search">
     </form>
@@ -75,30 +76,41 @@
       </li>
       <li><a class="bul" href="#fmy-folders"><i class="fa fa-star-o" aria-hidden="true"></i>My Folders</a>
       </li>
-      <li><a class="bul" href="#my-team-folders"><i class="fa fa-folder-open-o" aria-hidden="true"></i>My Team Folders</a>
+      <li><a class="bul" href="#my-team-folders"><i class="fa fa-folder-open-o" aria-hidden="true"></i>My Team
+        Folders</a>
       </li>
       <li><a class="bul" href="#public-folders"><i class="fa fa-files-o" aria-hidden="true"></i>Public Folders</a>
       </li>
     </ul>
     <div id="quick-reports"><!--tabs-->
-     <div class="setting-box">
-       <input type="text">
+      <input type="checkbox" id="set-box">
+      <div class="setting-box">
+        <div class="quick-dropdown">
+          <div class="arrow"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+          <ul>
+            <li><a href="http://netcraft.co.il/">netcraft</a></li>
+          </ul>
+        </div>
       <span>
         <a href="http://netcraft.co.il/" target="_blank" class="expand"><img src="images/icons/expand.png" alt=""></a>
-      <a href=""><img src="images/icons/settings.png" alt=""></a>
+      <label class="setting-icon" for="set-box"><img src="images/icons/settings.png" alt=""></label>
       </span>
-     </div>
+      </div>
+
       <div class="custom-frame-box">
         <form action="submit">
           <ul>
-            <li><label for="">REPORT1  NAME<input type="text"></label><label for="">URL<input type="url"></label></li>
-            <li><label for="">REPORT2  NAME<input type="text"></label><label for="">URL<input type="url"></label></li>
-            <li><label for="">REPORT3  NAME<input type="text"></label><label for="">URL<input type="url"></label></li>
+            <li><label for=""><span class="report-lab">REPORT1</span>NAME<input type="text"></label><label
+                    for="">URL<input type="url"></label></li>
+            <li><label for=""><span class="report-lab">REPORT2</span>NAME<input type="text"></label><label
+                    for="">URL<input type="url"></label></li>
+            <li><label for=""><span class="report-lab">REPORT3</span>NAME<input type="text"></label><label
+                    for="">URL<input type="url"></label></li>
           </ul>
           <button class="quick-btn">Save</button>
         </form>
       </div>
-      <iframe  class="quick-frame" src="http://netcraft.co.il/" frameborder="0" width="100%" height="300"></iframe>
+      <iframe class="quick-frame" src="http://netcraft.co.il/" frameborder="0" width="100%" height="300"></iframe>
     </div>
     <div id="fmy-folders">
     </div>
