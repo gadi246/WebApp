@@ -233,7 +233,7 @@ header > .layout-wrap {
     width: 100%;
     justify-content: space-between;
 }
-.setting-box span > .expand {
+.setting-box span > .quick-expand {
     padding-right: 10px;
 }
 .quick-frame {
@@ -301,20 +301,11 @@ header > .layout-wrap {
     width: 200px;
     height: 25px;
     background: #fff;
-    border: 1px solid #646464;
     position: relative;
 }
-.quick-dropdown li > a {
-    color:#222222;
-    display: block;
-    position: absolute;
-    bottom: 0;
+.quick-dropdown > select {
+    width: 100%;
 }
-.quick-dropdown .arrow {
-    position: absolute;
-    right:5px;
-}
-
 
 @media (max-width: 960px) {
     .layout-wrap {

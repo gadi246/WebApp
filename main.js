@@ -18,4 +18,12 @@ ul.addEventListener("click", function (event) {
 }, true);
 targeted(buls[0]);
 
+var select = document.querySelector('select');
+var qframe = document.querySelector('.quick-frame');
+var qexpand = document.querySelector('.quick-expand');
+select.addEventListener('input', function(e){
+    var newReport = this.value;
+    qframe.src = newReport;
+    qexpand.href = newReport;
+});
 
