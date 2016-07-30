@@ -217,7 +217,7 @@ header > .layout-wrap {
     display: none;
     padding: 1%;
 }
-
+ /*the divs content*/
 .tabs :target {
     display: flex;
 
@@ -290,6 +290,10 @@ header > .layout-wrap {
     color: rgb(240,240,240);
     border: none;
     padding: 3px 30px
+}
+.quick-btn:active {
+    background: #fff;
+    color:#000;
 }
 #set-box:checked ~ .custom-frame-box {
     height: 230px;
