@@ -1,10 +1,10 @@
 // 4 tabs onclick indication with background filling
 var buls = document.querySelectorAll('.bul');
 var ul = document.querySelector('.tabs > ul');
-function loadFirstTabDiv(){
-    var loc = 'http://127.0.0.1:8080/';
-    location = loc + "#quick-reports";
-}
+// function loadFirstTabDiv(){
+//     var loc = 'http://127.0.0.1:8080/';
+//     location = loc + "#quick-reports";
+// }
 function targeted(li) {
     li.style.background = '#ebebeb';
    li.style.color = '#646464';
