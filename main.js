@@ -1,14 +1,13 @@
-// 4 tabs onclick indication with background filling
+(function() {// 4 tabs onclick indication with background filling
 var buls = document.querySelectorAll('.bul');
 var ul = document.querySelector('.tabs > ul');
- function loadFirstTabDiv(){
-    var loc = 'http://127.0.0.1:8080/';
-    location = loc + "#quick-reports";
-}
+var tabsContent = document.querySelectorAll('.tabs > div');
 
+window.onload = targeted(buls[0]), openTab();
 
 ul.addEventListener("click", function (event) {
-    if(event.target.className === 'bul'||event.target.parentNode.className === 'bul') {
+    event.preventDefault()
+    if (event.target.className === 'bul' || event.target.parentNode.className === 'bul') {
         for (var i = 0; i < buls.length; i++) {
             buls[i].classList.remove('activated');
         }
@@ -20,38 +19,63 @@ ul.addEventListener("click", function (event) {
         }
     }
 }, true);
-loadFirstTabDiv();
-targeted(buls[0]);
 
 function targeted(tab) {
     tab.classList.add('activated');
+    location = tab.href;
 }
-
-
+window.addEventListener("hashchange", openTab, false);
+function openTab() {
+    var newId = location.hash.slice(1);
+    for (var i = 0; i < tabsContent.length; i++) {
+        tabsContent[i].style.display = 'none';
+        if (tabsContent[i].id === newId) {
+            tabsContent[i].style.display = 'flex';
+        }
+    }
+}
 
 
 // select function
 var select = document.querySelector('select');
 var qframe = document.querySelector('.quick-frame');
 var qexpand = document.querySelector('.quick-expand');
-select.addEventListener('change', function(e){
-    var newReport = e.target.value;
-    qframe.src = newReport;
-    qexpand.href = newReport;
-});
+
+
 var form = document.querySelector('.tabs form');
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     var formElm = e.target;
     var formData = new FormData(formElm);
-    for(var i = 0;i < select.length;i++){
-        var name = formData.get('q-title' + (i + 1));
-      select[i].innerText = name;
-        var url = formData.get('q-url' + (i +1));
-      select[i].value = url;
+            makeLinksObj(formData.get('q-title1'), formData.get('q-url1' ))
 
+
+});
+
+
+function makeLinksObj(title, url){
+    localStorage.clear()
+    var linkList = {};
+    linkList[title] = url;
+    localStorage.setItem('links', JSON.stringify(linkList));
+    var opt1 = document.createElement("option");
+    opt1.value = url;
+    opt1.text = title;
+    select.add(opt1,null);
+    displayIframe();
+}
+    function displayIframe(){
+        if(select.selectedIndex > -1){qframe.src =select.options[0].value;}
     }
-   });
 
+
+
+    select.addEventListener('change', function (e) {
+        var newReport = e.target.value;
+        qframe.src = newReport;
+        qexpand.href = newReport;
+    });
+
+})();//end
 
 

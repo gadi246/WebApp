@@ -218,14 +218,7 @@ header > .layout-wrap {
 .tabs > div {
     background: #ebebeb;
     margin: 0 1.666%;
-    display: none;
     padding: 1%;
-}
- /*the divs content*/
-.tabs :target {
-    display: flex;
-
-
 }
 #quick-reports {
     flex-direction: column;
@@ -261,6 +254,12 @@ header > .layout-wrap {
 .setting-icon {
     cursor: pointer;
     }
+
+.setting-icon:hover img {
+    transition: all 2s ease   ;
+    transform: rotate(180deg);
+    transform-origin: 50% 50%;
+}
 .custom-frame-box ul{
     padding: 0;
 }
