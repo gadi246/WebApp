@@ -192,23 +192,27 @@ header > .layout-wrap {
     width: 23%;
     margin: 1.666%;
     margin-bottom: 0;
-    background: #646464;
     text-align: center;
 
 }
 .tabs > ul > li > a {
-    color: rgb(240,240,240);
     font-size: 0.9rem;
     display: block;
     padding: 12px 5px;
     height: 100%;
-
-
 }
 .tabs li > a > i {
     font-size: 1.2rem;
     padding-right: 4px;
     vertical-align: bottom;
+}
+.bul {
+    color: rgb(240,240,240);
+    background: #646464;
+}
+.activated {
+    background: #ebebeb;
+    color: #646464;
 }
 
 .tabs > div {

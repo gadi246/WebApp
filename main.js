@@ -1,32 +1,35 @@
 // 4 tabs onclick indication with background filling
 var buls = document.querySelectorAll('.bul');
 var ul = document.querySelector('.tabs > ul');
-// function loadFirstTabDiv(){
-//     var loc = 'http://127.0.0.1:8080/';
-//     location = loc + "#quick-reports";
-// }
-function targeted(li) {
-    li.style.background = '#ebebeb';
-   li.style.color = '#646464';
+ function loadFirstTabDiv(){
+    var loc = 'http://127.0.0.1:8080/';
+    location = loc + "#quick-reports";
 }
 
-ul.addEventListener("click", function (event) {
-    if(event.target.tagName === 'A') {
-        for (var i = 0; i < buls.length; i++) {
-            buls[i].setAttribute('style', 'background: #646464');
 
+ul.addEventListener("click", function (event) {
+    if(event.target.className === 'bul'||event.target.parentNode.className === 'bul') {
+        for (var i = 0; i < buls.length; i++) {
+            buls[i].classList.remove('activated');
         }
         if (event.target.className === "bul") {
             targeted(event.target);
+        }
+        else if (event.target.tagName === 'I') {
+            targeted(event.target.parentNode)
         }
     }
 }, true);
 loadFirstTabDiv();
 targeted(buls[0]);
 
+function targeted(tab) {
+    tab.classList.add('activated');
+}
 
 
-localStorage.clear()
+
+
 // select function
 var select = document.querySelector('select');
 var qframe = document.querySelector('.quick-frame');
