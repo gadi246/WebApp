@@ -41,6 +41,7 @@ function addToSelect(){
         opt.text = key;
         select.add(opt, null);
         displayIframe();
+        //don't forget the _blank
     }
 
 }
