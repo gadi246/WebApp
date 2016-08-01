@@ -238,9 +238,10 @@ header > .layout-wrap {
 .setting-box>span {
     height:29px;
 }
-.even {
+.setting-box.even {
     justify-content: flex-end;
 }
+.folders.expand,
 .quick.expand {
     padding-right: 10px;
 }
@@ -259,7 +260,7 @@ iframe {
     /*padding: 10px;*/
     /*margin-top: 10px;*/
 }
-#set-box {
+#set-box, #folders-set-box {
     display: none;
 }
 .setting-icon {
@@ -309,19 +310,23 @@ iframe {
     background: #fff;
     color:#000;
 }
-#set-box:checked ~ .custom-frame-box {
+#set-box:checked ~ .custom-frame-box,
+#folders-set-box:checked ~ .custom-frame-box
+{
     height: 230px;
     overflow: visible;
     padding: 10px;
     margin-top: 10px;
 }
-.quick-dropdown {
+.quick-dropdown,
+.folders-dropdown{
     width: 200px;
     height: 25px;
     background: #fff;
     position: relative;
 }
-.quick-dropdown > select {
+.quick-dropdown > select,
+.folders-dropdown > select {
     width: 100%;
 }
 
