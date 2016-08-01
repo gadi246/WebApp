@@ -195,30 +195,33 @@ header > .layout-wrap {
     text-align: center;
 
 }
-.tabs > ul > li > a {
+.bul {
     font-size: 0.9rem;
     display: block;
     padding: 12px 5px;
     height: 100%;
+    color: rgb(240,240,240);
+    background: #646464;
 }
-.tabs li > a > i {
+.bul > i {
     font-size: 1.2rem;
     padding-right: 4px;
     vertical-align: bottom;
 }
-.bul {
-    color: rgb(240,240,240);
-    background: #646464;
-}
-.activated {
+
+.bul.activated {
     background: #ebebeb;
     color: #646464;
 }
 
-.tabs > div {
+.tabs-containers {
     background: #ebebeb;
     margin: 0 1.666%;
     padding: 1%;
+    display: none;
+}
+.tabs-containers.is-active {
+    display: flex;
 }
 #quick-reports {
     flex-direction: column;

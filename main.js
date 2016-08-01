@@ -1,40 +1,4 @@
-(function() {// 4 tabs onclick indication with background filling
-var buls = document.querySelectorAll('.bul');
-var ul = document.querySelector('.tabs > ul');
-var tabsContent = document.querySelectorAll('.tabs > div');
-
-window.onload = targeted(buls[0]), openTab();
-
-ul.addEventListener("click", function (event) {
-    event.preventDefault()
-    if (event.target.className === 'bul' || event.target.parentNode.className === 'bul') {
-        for (var i = 0; i < buls.length; i++) {
-            buls[i].classList.remove('activated');
-        }
-        if (event.target.className === "bul") {
-            targeted(event.target);
-        }
-        else if (event.target.tagName === 'I') {
-            targeted(event.target.parentNode)
-        }
-    }
-}, true);
-
-function targeted(tab) {
-    tab.classList.add('activated');
-    location = tab.href;
-}
-window.addEventListener("hashchange", openTab, false);
-function openTab() {
-    var newId = location.hash.slice(1);
-    for (var i = 0; i < tabsContent.length; i++) {
-        tabsContent[i].style.display = 'none';
-        if (tabsContent[i].id === newId) {
-            tabsContent[i].style.display = 'flex';
-        }
-    }
-}
-
+(function() {
 
 // select function
 var select = document.querySelector('select');
