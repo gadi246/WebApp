@@ -22,7 +22,7 @@
                 buls[index].classList.add('activated');
                 tabsContent[activeIndex].classList.remove('is-active');
                 tabsContent[index].classList.add('is-active');
-                location = '#' + tabsContent[index].id;
+                location = '#' + tabsContent[index].id;//some unfunctional line of code
                 activeIndex = index;
             }
         }
