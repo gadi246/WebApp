@@ -4,10 +4,28 @@
 
 var select = document.querySelector('select');
 var qframe = document.querySelector('.quick-frame');
-var qexpand = document.querySelector('.quick-expand');
+var qexpand = document.querySelector('.quick.expand');
 var form = document.querySelector('.tabs form');
+var settingBtn = document.querySelectorAll('.setting-icon');
 window.onload = addToSelect();
 
+function toggleForm(that) {
+    var targetNode;
+    if (this.className === 'setting-icon'){
+        targetNode = this.parentNode.parentNode.nextElementSibling;
+    }
+    else {
+        targetNode = that.parentNode;
+    }
+
+    if(!(targetNode.className === 'custom-frame-box open-box')) {
+        targetNode.classList.add('open-box');
+    }
+    else {
+        targetNode.classList.remove('open-box');
+    }
+}
+settingBtn[0].addEventListener('click',toggleForm);
 
 
 form.addEventListener('submit', function (e) {
@@ -20,6 +38,8 @@ form.addEventListener('submit', function (e) {
         }
     }
     saveOnLocalstorage(newObj);
+    toggleForm(this);
+
 
 });
 
@@ -46,7 +66,7 @@ function addToSelect(){
 
 }
     function displayIframe(){
-        if(select.selectedIndex > -1){qframe.src =select.options[0].value;}
+        if(select.selectedIndex > -1){qframe.src = select.options[0].value;}
     }
 
 

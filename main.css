@@ -261,14 +261,16 @@ iframe {
     background: #fff;
     box-shadow: 1px 1px 5px 0px gray;
     transition: all .3s ease;
-    /*padding: 10px;*/
-    /*margin-top: 10px;*/
+    margin-top: 33px;
 }
 #set-box, #folders-set-box {
     display: none;
 }
 .setting-icon {
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
     }
 
 .setting-icon:hover img {
@@ -314,13 +316,10 @@ iframe {
     background: #fff;
     color:#000;
 }
-#set-box:checked ~ .custom-frame-box,
-#folders-set-box:checked ~ .custom-frame-box
-{
+ .open-box {
     height: 230px;
     overflow: visible;
-    padding: 10px;
-    margin-top: 10px;
+     padding: 10px;
 }
 .quick-dropdown,
 .folders-dropdown{
