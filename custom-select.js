@@ -1,15 +1,20 @@
 // (function() {
 
-// select function
 
+//cache some  essential elements
 var select = UTILS.qsa('select');
 var iframe = UTILS.qsa('.dynamic-frame');
 var expand = UTILS.qsa('.dynamic-expand.expand');
 var form = UTILS.qsa('.tabs form');
 var settingBtns = UTILS.qsa('.setting-icon');
+
+//loading the local storage selections
 window.onload = activateSelect();
+
+//inits of the tabs events
 initSettingBtns();
 initForms();
+
 
 function initSettingBtns(){
     Array.prototype.forEach.call(settingBtns, function(elem,index,array){
@@ -26,6 +31,7 @@ function toggleForm(node,parentClass,cb){
     node = node.parentNode;
     toggleForm(node,parentClass,cb);
 }
+//toggles the form and reset to the initial state
 function goToForm(node){
   var targetNode = node.querySelector('.custom-frame-box');
     if (!(targetNode.className === 'custom-frame-box open-box')) {
@@ -62,10 +68,10 @@ function handlerForms(link) {
         toggleForm(this,'tabs-containers is-active',goToForm);
 
     });
+    // form validation event
     UTILS.addEvent(link, 'keyup', function(e){
        var inputTarget = e.target;
        var inputIndex = Number(inputTarget.dataset.index);
-       //var that = this;
         validate.call(this,inputTarget.type, inputTarget.value)
         function validate(text, val){
             if(text === 'text'){
@@ -83,6 +89,7 @@ function saveOnLocalstorage(obj, key) {
     localStorage.setItem(key, JSON.stringify(obj));
    activateSelect();
 }
+//used also onpage loading
 function activateSelect() {
     Array.prototype.forEach.call(select, function (el,ind,arr) {
         el.length = 0;
@@ -105,7 +112,7 @@ function displayIframe() {
         }
     });
 }
-
+//making a closure for the select elements handlers
 Array.prototype.forEach.call(select, function (el,ind,arr) {
     onChangeHandler(el,ind)
 });
