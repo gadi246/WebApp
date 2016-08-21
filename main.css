@@ -241,8 +241,7 @@ header > .layout-wrap {
 .setting-box.even {
     justify-content: flex-end;
 }
-.folders.expand,
-.quick.expand {
+.dynamic-expand{
     padding-right: 10px;
 }
 .expand:hover img {
