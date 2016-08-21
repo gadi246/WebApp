@@ -1,7 +1,7 @@
 
 (function(){
-    var buls = document.querySelectorAll('.bul');
-    var tabsContent = document.querySelectorAll('.tabs-containers');
+    var buls = UTILS.qsa('.bul');
+    var tabsContent = UTILS.qsa('.tabs-containers');
     var activeIndex = 0;
     function init() {
         Array.prototype.forEach.call(buls, function(elem,index,array) {
@@ -11,7 +11,7 @@
         }
 
         function handler(link,index){
-            link.addEventListener('click',function(e) {
+           UTILS.addEvent(link,'click',function(e) {
               e.preventDefault();
                 goToTabs(index);
             });

@@ -2,16 +2,16 @@
 
 // select function
 
-var select = document.querySelectorAll('select');
-var iframe = document.querySelectorAll('.dynamic-frame');
-var expand = document.querySelectorAll('.dynamic-expand.expand');
-var form = document.querySelectorAll('.tabs form');
-var settingBtns = document.querySelectorAll('.setting-icon');
+var select = UTILS.qsa('select');
+var iframe = UTILS.qsa('.dynamic-frame');
+var expand = UTILS.qsa('.dynamic-expand.expand');
+var form = UTILS.qsa('.tabs form');
+var settingBtns = UTILS.qsa('.setting-icon');
 window.onload = activateSelect();
 
 function initSettingBtns(){
     Array.prototype.forEach.call(settingBtns, function(elem,index,array){
-        elem.addEventListener('click',function(){
+        UTILS.addEvent(elem,'click',function(){
             toggleForm(this,'tabs-containers is-active',goToForm);
         });
     });
@@ -43,7 +43,7 @@ function initForms() {
 }
 
 function handlerForms(link) {
-    link.addEventListener('submit',function(e) {
+    UTILS.addEvent(link, 'submit',function(e) {
         e.preventDefault();
         var newObj = {};
         var filled = this.elements;
