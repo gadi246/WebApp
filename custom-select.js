@@ -8,6 +8,8 @@ var expand = UTILS.qsa('.dynamic-expand.expand');
 var form = UTILS.qsa('.tabs form');
 var settingBtns = UTILS.qsa('.setting-icon');
 window.onload = activateSelect();
+initSettingBtns();
+initForms();
 
 function initSettingBtns(){
     Array.prototype.forEach.call(settingBtns, function(elem,index,array){
@@ -28,13 +30,16 @@ function goToForm(node){
   var targetNode = node.querySelector('.custom-frame-box');
     if (!(targetNode.className === 'custom-frame-box open-box')) {
         targetNode.classList.add('open-box');
+        targetNode.querySelector('input').focus();
+        var inputs = targetNode.querySelectorAll('input');
+        for(var j = 0;j < inputs.length;j++){
+            inputs[j].required = false;
+        }
     }
     else {
         targetNode.classList.remove('open-box');
     }
 }
-initSettingBtns();
-
 
 function initForms() {
     Array.prototype.forEach.call(form, function (elem, index, array) {
@@ -57,9 +62,21 @@ function handlerForms(link) {
         toggleForm(this,'tabs-containers is-active',goToForm);
 
     });
+    UTILS.addEvent(link, 'keyup', function(e){
+       var inputTarget = e.target;
+       var inputIndex = Number(inputTarget.dataset.index);
+       //var that = this;
+        validate.call(this,inputTarget.type, inputTarget.value)
+        function validate(text, val){
+            if(text === 'text'){
+                this.elements[inputIndex + 1].required = val;
+            }
+            else {
+                this.elements[inputIndex - 1].required = val;
+            }
+        }
+    });
 }
-initForms();
-
 
 function saveOnLocalstorage(obj, key) {
     localStorage.removeItem(key);
@@ -93,12 +110,13 @@ Array.prototype.forEach.call(select, function (el,ind,arr) {
     onChangeHandler(el,ind)
 });
 function onChangeHandler(el,ind){
-el.addEventListener('change', function (e) {
+UTILS.addEvent(el, 'change', function (e) {
     var newReport = e.target.value;
     iframe[ind].src = newReport;
     expand[ind].href = newReport;
 });
 }
+
 
 
 // })();//end
