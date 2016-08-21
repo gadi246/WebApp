@@ -54,7 +54,8 @@ function handlerForms(link) {
             }
         }
         saveOnLocalstorage(newObj,key);
-        toggleForm(this,'custom-frame-box',goToForm);
+        toggleForm(this,'tabs-containers is-active',goToForm);
+
     });
 }
 initForms();
@@ -80,8 +81,8 @@ function activateSelect() {
 }
 function displayIframe() {
     Array.prototype.forEach.call(select, function (el,ind,arr) {
-        var firstOption = el.options[0].value;
         if (el.selectedIndex > -1) {
+            var firstOption = el.options[0].value;
             iframe[ind].src = firstOption;
             expand[ind].href = firstOption;
         }
