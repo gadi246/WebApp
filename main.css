@@ -331,6 +331,13 @@ iframe {
 .folders-dropdown > select {
     width: 100%;
 }
+.notifications {
+    display: flex;
+    align-items: center;
+}
+.notifications > span {
+    margin-left: 10px;
+}
 
 @media (max-width: 960px) {
     .layout-wrap {

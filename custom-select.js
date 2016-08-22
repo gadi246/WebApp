@@ -64,7 +64,9 @@ function handlerForms(link) {
                 newObj[filled['title' + i].value] = filled['url' + i].value;
             }
         }
-        saveOnLocalstorage(newObj,key);
+        if(Object.keys(newObj).length > 0){
+            saveOnLocalstorage(newObj,key);
+        }
         toggleForm(this,'tabs-containers is-active',goToForm);
 
     });

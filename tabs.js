@@ -1,4 +1,5 @@
 
+//inspired by www.callmenick.com
 (function(){
     var buls = UTILS.qsa('.bul');
     var tabsContent = UTILS.qsa('.tabs-containers');
