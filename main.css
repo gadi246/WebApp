@@ -334,9 +334,13 @@ iframe {
 .notifications {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
-.notifications > span {
+.notifications > span:first-child {
     margin-left: 10px;
+}
+.notifications > span:last-child {
+    margin-right: 10px;
 }
 
 @media (max-width: 960px) {
