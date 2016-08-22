@@ -19,20 +19,12 @@ initForms();
 function initSettingBtns(){
     Array.prototype.forEach.call(settingBtns, function(elem,index,array){
         UTILS.addEvent(elem,'click',function(){
-            toggleForm(this,'tabs-containers is-active',goToForm);
+            UTILS.TraverseUp(this,'tabs-containers is-active',toggleForm);
         });
     });
 }
-function toggleForm(node,parentClass,cb){
-    if(node.className === parentClass ){
-        cb(node);
-        return;
-    }
-    node = node.parentNode;
-    toggleForm(node,parentClass,cb);
-}
 //toggles the form and reset to the initial state
-function goToForm(node){
+function toggleForm(node){
   var targetNode = node.querySelector('.custom-frame-box');
     if (!(targetNode.className === 'custom-frame-box open-box')) {
         targetNode.classList.add('open-box');
@@ -67,7 +59,7 @@ function handlerForms(link) {
         if(Object.keys(newObj).length > 0){
             saveOnLocalstorage(newObj,key);
         }
-        toggleForm(this,'tabs-containers is-active',goToForm);
+        UTILS.TraverseUp(this,'tabs-containers is-active',toggleForm);
 
     });
     // form validation event

@@ -12,8 +12,8 @@
   <div class="layout-wrap clearfix"><!--header-->
     <a href="#"><img src="https://googledrive.com/host/0B6ZIsommzsgVMVA2MzdKUjN2S0U/logo-netcraft.svg"
                      alt="netcraft"></a>
-    <form class="search-box" method="get" action="http://www.google.com">
-      <input type="search" name="q" placeholder="search">
+    <form class="search-box" method="" action="">
+      <input type="search" name="search" placeholder="search">
     </form>
   </div>
 </header>
@@ -85,7 +85,7 @@
     <div class="tabs-containers is-active" id="quick-reports"><!--***********QUICK REPORTS**********-->
       <div class="setting-box">
         <div class="quick-dropdown">
-          <select name="reports">
+          <select name="reports" data-index="0">
           </select>
         </div>
       <span>
@@ -115,7 +115,7 @@
     <div class="tabs-containers" id="my-team-folders">
       <div class="setting-box">
         <div class="folders-dropdown">
-          <select name="folders">
+          <select name="folders" data-index="2">
           </select>
         </div>
       <span>
@@ -148,5 +148,6 @@
 <script src="ajax.js"></script>
 <script src="tabs.js"></script>
 <script src="custom-select.js"></script>
+<script src="search.js"></script>
 </body>
 </html>

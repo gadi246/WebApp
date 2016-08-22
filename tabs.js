@@ -1,6 +1,7 @@
 
 //inspired by www.callmenick.com
-(function(){
+
+var TABS = (function(){
     var buls = UTILS.qsa('.bul');
     var tabsContent = UTILS.qsa('.tabs-containers');
     var activeIndex = 0;
@@ -27,8 +28,11 @@
                 activeIndex = index;
             }
         }
-        
-
-    init();
+    return{
+        init: init,
+        goToTabs:goToTabs
+    }
 })();
+TABS.init();
+
 
