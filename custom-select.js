@@ -42,6 +42,7 @@ function toggleForm(node){
 function initForms() {
     Array.prototype.forEach.call(form, function (elem, index, array) {
         handlerForms(elem);
+
     });
 }
 
