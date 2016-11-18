@@ -245,7 +245,7 @@ var UTILS = (function () {
                         if (contentType) {
                             // Handle JSON format
                             if (contentType === 'text/json' ||
-                                contentType === 'application/json') {
+                                contentType.indexOf('application/json') > -1 ) {
 
                                 // JSON throws an exception on invalid JSON
                                 try {
